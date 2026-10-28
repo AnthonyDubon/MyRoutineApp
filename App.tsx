@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import Encabezado from './ComponentsTarea/Encabezado';
 import CajaEstadistica from './ComponentsTarea/CajaEstadistica';
+import Etiqueta from './ComponentsTarea/Etiqueta';
 
 export default function App() {
   return (
@@ -20,6 +21,13 @@ export default function App() {
       <CajaEstadistica Valor="45" etiqueta="Minutos" />
       <CajaEstadistica Valor="320" etiqueta="Kcal" />
       </View>
+
+      <View style={styles.etiqueta}>
+        <Etiqueta Texto="Pecho" colorFondo='#DBEAFE'/>
+        <Etiqueta Texto="Esplada" colorFondo='#D1FAE5'/>
+        <Etiqueta Texto="Pierna" colorFondo='#FCE7F3'/>
+      
+      </View>
       
 
     </View>
@@ -34,6 +42,7 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
     marginTop: 30,
     
+    
   },
   Datos:{
 
@@ -44,6 +53,10 @@ const styles = StyleSheet.create({
 
   titulo:{
      paddingLeft: 22,
+  },
+  etiqueta:{
+    flexDirection: "column",
+    alignItems:'flex-end'
   }
 
 
