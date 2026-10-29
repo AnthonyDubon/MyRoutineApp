@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Encabezado from './ComponentsTarea/Encabezado';
 import CajaEstadistica from './ComponentsTarea/CajaEstadistica';
 import Etiqueta from './ComponentsTarea/Etiqueta';
+import TargetaEjercicio from './ComponentsTarea/TarjetaEjercicio';
 
 export default function App() {
   return (
@@ -22,11 +23,39 @@ export default function App() {
       <CajaEstadistica Valor="320" etiqueta="Kcal" />
       </View>
 
-      <View style={styles.etiqueta}>
-        <Etiqueta Texto="Pecho" colorFondo='#DBEAFE'/>
-        <Etiqueta Texto="Esplada" colorFondo='#D1FAE5'/>
-        <Etiqueta Texto="Pierna" colorFondo='#FCE7F3'/>
-      
+
+      <Text style={styles.Subtitulo}>EJERCICIOS</Text>
+
+    
+      <View style={styles.targetas}>
+        <TargetaEjercicio
+         nombre="Press de banca"
+         series={4}
+         repeticiones={10}
+         grupoMuscular="pecho"
+        />
+
+         <TargetaEjercicio
+         nombre="Remo con Barra"
+         series={4}
+         repeticiones={12}
+         grupoMuscular="Espalda"
+         destacado={true}
+        />
+
+         <TargetaEjercicio
+         nombre="Press militar"
+         series={3}
+         repeticiones={15}
+         grupoMuscular="Hombro"
+        />
+
+         <TargetaEjercicio
+         nombre="Curl de biceps"
+         series={3}
+         repeticiones={13}
+         grupoMuscular="Biceps"
+        />
       </View>
       
 
@@ -53,11 +82,26 @@ const styles = StyleSheet.create({
 
   titulo:{
      paddingLeft: 22,
+     
   },
   etiqueta:{
     flexDirection: "column",
     alignItems:'flex-end'
+  },
+
+  Subtitulo:{
+    paddingLeft: 22,
+    marginTop: 30,
+    fontWeight:'bold',
+    fontSize: 16,
+  },
+  targetas:{
+    marginTop: 15,
+    gap: 12,
+    
+        
   }
+
 
 
 });

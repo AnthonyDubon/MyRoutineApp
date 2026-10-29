@@ -23,15 +23,10 @@ Nombre:{
 
 },
 etiqueta:{
-
-    
-        padding:10,
-        borderRadius:10,  
-        flex: 1,
-        margin: 50,
-        width: 70
-
-   
+  paddingHorizontal: 12,
+  paddingVertical: 8,
+  borderRadius: 20,
+  alignSelf: 'flex-start',
 }
 
 });
