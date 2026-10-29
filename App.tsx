@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import Encabezado from './ComponentsTarea/Encabezado';
 import CajaEstadistica from './ComponentsTarea/CajaEstadistica';
-import Etiqueta from './ComponentsTarea/Etiqueta';
 import TargetaEjercicio from './ComponentsTarea/TarjetaEjercicio';
 
 export default function App() {

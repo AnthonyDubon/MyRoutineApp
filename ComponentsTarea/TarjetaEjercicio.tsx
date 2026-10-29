@@ -21,9 +21,6 @@ export default function TargetaEjercicioProps ({nombre, series, repeticiones,gru
             <Etiqueta Texto={grupoMuscular} colorFondo="#DBEAFE" />
             </View>
             <Text>{series} series × {repeticiones} repeticiones</Text>
-            
-            
-            
         </View>
     );
 }
@@ -39,7 +36,7 @@ const styles = StyleSheet.create({
     destacado: {
     borderWidth: 3,
     borderColor:'red'
-},
+    },
     
     targt:{
     flexDirection: 'row',
@@ -58,12 +55,5 @@ const styles = StyleSheet.create({
         fontWeight:'condensed',
         fontSize: 12,
 
-    },
-
-   
-
-
-
-
-
+    }
 })

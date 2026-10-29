@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View } from'react-native';
 
-type Etiqueta1 ={
+type EtiquetaProps ={
     Texto: string, 
     colorFondo: string
 
 }
 
-export default function Etiqueta1 ({Texto, colorFondo}:Etiqueta1){
+export default function Etiqueta1 ({Texto, colorFondo}:EtiquetaProps){
     return(
 
         <View style={[styles.etiqueta, { backgroundColor: colorFondo }]}>

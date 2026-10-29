@@ -1,12 +1,12 @@
 import {StyleSheet, Text, View} from 'react-native';
 
-type CajaEstadistica1 ={
+type CajaEstadisticaProps ={
 
     Valor:String;
     etiqueta:String;
 }
 
-export default function CajaEstadistica1 ({Valor,etiqueta}:CajaEstadistica1){
+export default function CajaEstadistica1 ({Valor,etiqueta}:CajaEstadisticaProps){
 
     return(
     <View style={styles.caja}>
