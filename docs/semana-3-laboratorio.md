@@ -50,3 +50,50 @@ En "App.tsx" utilicé varias funciones para organizar las acciones de la aplicac
 "vaciarPedido(): void" (líneas 95-97): muestra el mensaje para vaciar el pedido.
 
 Estas funciones están separadas de los componentes reutilizables, por lo que puedo utilizar los mismos botones y tarjetas con diferentes acciones.
+
+
+### P6. Agregar una sección de Promociones
+
+Para agregar una sección llamada "Promociones", utilizaría nuevamente los componentes "EncabezadoSeccion" y "TarjetaProducto" desde "App.tsx".
+
+En "App.tsx", líneas 104-119, ya se muestra cómo utilizar estos componentes para crear el menú. Podría hacer algo parecido, pero filtrando los productos que tienen descuento.
+
+No tendría que modificar "ComponentsLaboratorio/EncabezadoSeccion.tsx" ni "ComponentsLaboratorio/TarjetaProducto.tsx", porque ambos reciben la información mediante sus propiedades y se pueden reutilizar en diferentes secciones.
+
+
+### E1. Categoría incorrecta
+
+En "App.tsx", línea 20, cambié temporalmente la categoría "bebida" por "bebidas".
+
+Error de TypeScript: [Type '"bebidas"' is not assignable to type 'CategoriaProducto'. Did you mean '"bebida"'?ts(2820)
+Producto.ts(8, 3): The expected type comes from property 'categoria' which is declared here on type 'Producto'
+(property) categoria: CategoriaProducto].
+
+El error aparece porque en "Producto.ts" definimos que las únicas categorías permitidas son "bebida", "comida" y "postre". TypeScript detecta que "bebidas" no pertenece a ese tipo.
+
+Después corregí el valor y lo dejé nuevamente como "bebida".
+
+
+### E2. Propiedad obligatoria faltante
+
+En "App.tsx", eliminé temporalmente la propiedad "precio" del primer producto, que estaba en la línea 21.
+
+Error de TypeScript: [Property 'precio' is missing in type '{ id: number; nombre: string; categoria: "bebida"; disponibilidad: "disponible"; }' but required in type 'Producto'.
+Producto.ts(9, 3): 'precio' is declared here.].
+
+El error aparece porque en "Producto.ts" la propiedad "precio" es obligatoria. En cambio, "descuento" y "nuevo" son opcionales porque tienen el símbolo "?". Por eso puedo omitir esas dos propiedades sin generar un error.
+
+Después agregué nuevamente "precio: 35" para corregirlo.
+
+
+### E3. Propiedad obligatoria de TarjetaProducto
+
+En "App.tsx", línea 114, eliminé temporalmente la propiedad "textoAccion" de la primera tarjeta del menú.
+
+Error de TypeScript: [Property 'textoAccion' is missing in type '{ key: number; producto: Producto; onAccion: () => void; precioFormateado: string; precioFinalFormateado: string; }' but required in type 'TarjetaProductoProps'.
+TarjetaProducto.tsx(8, 3): 'textoAccion' is declared here.].
+
+El error aparece porque en "ComponentsLaboratorio/TarjetaProducto.tsx" definimos "textoAccion" como una propiedad obligatoria de tipo "string". TypeScript comprueba que enviemos todas las propiedades requeridas al utilizar el componente.
+
+Después agregué nuevamente "textoAccion" con el valor "Agregar" para corregir el error.
+
