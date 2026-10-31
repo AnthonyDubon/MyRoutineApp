@@ -31,3 +31,13 @@ En "TarjetaProducto.tsx", las propiedades "precioFormateado" y "precioFinalForma
 Si el cálculo o el formato estuvieran escritos dentro de "TarjetaProducto.tsx", tendríamos que modificar también ese componente cuando cambiara la moneda o la forma de calcular los descuentos.
 
 **Líneas pendientes:** se agregaran posteriormente las líneas exactas del cálculo y formato en "App.tsx", y las líneas correspondientes de "TarjetaProducto.tsx".
+
+
+
+### P4. Componente EncabezadoSeccion
+
+En "ComponentsLaboratorio/EncabezadoSeccion.tsx", líneas 5-9, definí las propiedades del componente. "cantidad" y "onVerTodo" son opcionales porque tienen el símbolo "?", mientras que "titulo" es obligatorio.
+
+En las líneas 21-23 verifico si se recibió una cantidad para mostrar el contador. En las líneas 26-33 verifico si existe la función "onVerTodo" para mostrar el botón "Ver todo".
+
+Esto permite utilizar el mismo encabezado en las tres secciones sin repetir código, mostrando solamente los elementos que necesita cada una.
