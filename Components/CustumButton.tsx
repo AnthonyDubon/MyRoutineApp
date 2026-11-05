@@ -1,35 +1,41 @@
 
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { Pressable, StyleSheet, Text } from "react-native";
+import { CustomButtonProps, CustomButtonVariant } from "../utiles/ButtonProps";
 
-type CustomButtonProps = {
-  title: string;
-  onPress: () => void;
-  variant?: "Primary" | "secondary" | "tertiary"
+export default function CustomButton({title, onPressButton, variant = "primary", disabled = false,}: CustomButtonProps) {
+  const styles = getStyles(variant);
 
-};
-
-export default function CustomButton({ title, onPress, variant }: CustomButtonProps) {
   return (
-    <TouchableOpacity style={styles.button} onPress={onPress}>
+    <Pressable
+      style={styles.button}
+      onPress={onPressButton}
+      disabled={disabled}
+    >
       <Text style={styles.buttonText}>{title}</Text>
-    </TouchableOpacity>
+    </Pressable>
   );
 }
 
-const styles = StyleSheet.create({
-  button: {
-    backgroundColor: 'navy',
-    padding: 12,
-    marginTop: 10,
-    width: 180,
-    borderRadius: 10,
-    justifyContent:'center',
-    alignItems:'center'
-  },
+const getStyles = (variant: CustomButtonVariant) =>
 
-  buttonText: {
-    color: 'white',
-    fontWeight: '500',
+  // aqui van definidos los estilos y las condicionales del estilo
+  StyleSheet.create({ button: { backgroundColor: 
+          variant === "primary"? "#24327b" // aqui pregunta si es primary que muestre azul
+          : variant === "secondary" ? "lightgray" // si ya pregunto y no es primary pero si secundary entonces muestra gris
+          : "transparent", // si ya pregunto las dos y no son, entonces lo muestra transparente
+
+      width: 180,
+      paddingVertical: 14,
+      paddingHorizontal: 18,
+      borderRadius: 8,
+      alignItems: "center",
+      marginTop: 10,
+    },
     
-  },
-});
+    buttonText: {
+      color: variant === "primary" ? "white" : "#000000",
+      fontWeight: "500",
+      fontSize: variant === "tertiary" ? 11 : 15,
+      letterSpacing: 0.3,
+    },
+  });

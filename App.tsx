@@ -1,47 +1,43 @@
-
-import { StyleSheet, Text, View } from 'react-native';
-import CustumButton from './Components/CustumButton';
+import { StatusBar } from 'expo-status-bar';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import CustomButton from './Components/CustumButton';
 
 export default function App() {
 
-  const handleOnPressPrimaryBuuton = () =>{
-    console.log("Inciando Cesion");
+  const handleOnPressPrimaryButton = () => {
+    console.log("Imprimiendo desde boton 1");
   }
 
-  const handleOnPressSecondaryButton = () =>{
-    console.log("Llendo a Registrase");
+  const handleOnPressSecondaryButton = () => {
+    console.log("Imprimiendo desde boton 2");
   }
+   const handleOnPressTertiaryButton = () => {
+    console.log("Imprimiendo desde boton 3");
+  }
+
+  
 
   return (
     <View style={styles.container}>
 
-      <Text>Mi primera aplicación móvil</Text>
-
-      <View style={styles.boton}>
-      <CustumButton title="Iniciar Cesion" onPress={handleOnPressPrimaryBuuton} />
-      <CustumButton title="Registrarse" onPress={handleOnPressSecondaryButton} />
+      <Text>Open up App.tsx to start working on your app!</Text>
+      <View style ={styles.buttonsContainer}>
+          <CustomButton title = "My App Button" onPressButton={handleOnPressPrimaryButton} />
+          <CustomButton title = "My App Button #2" onPressButton={handleOnPressSecondaryButton} variant='secondary'/>
+          <CustomButton title = "My App Button #3" onPressButton={handleOnPressTertiaryButton} variant='tertiary' disabled/>
       </View>
-      
-
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+    marginTop: 50,
+    backgroundColor: '#b6a8e4',
     alignItems: 'center',
-    height:190,
-    margin:30,
-    
-   
-    justifyContent: 'center',
   },
-  boton:{
-    flex:1,
-    padding:15,
-    backgroundColor:'pink',
-    marginTop:30,
+  buttonsContainer:{
+    padding: 15,
+    backgroundColor: 'pink'
   }
 });
