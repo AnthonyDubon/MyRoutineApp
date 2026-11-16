@@ -1,55 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, View } from 'react-native';
-import CustomButton from './Components/CustumButton';
-import CustomInput from './Components/CustomInput';
-import { useState } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
 export default function App() {
-  //hooks de react: useState, useEffect, useMemo, etc. 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleOnPressPrimaryButton = () => {
-    console.log("Imprimiendo desde boton 1");
-  }
-
-  const handleOnPressSecondaryButton = () => {
-    console.log("Imprimiendo desde boton 2");
-  }
-   const handleOnPressTertiaryButton = () => {
-    console.log("Imprimiendo desde boton 3");
-  }
   return (
     <View style={styles.container}>
-
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <CustomInput  
-        onChangeText={setEmail}
-        value={email}
-        placeholder='Correo'
-        type='email'
-        />
-      <CustomInput  
-        onChangeText={setPassword}
-        value={password}
-        placeholder='Contrasena'
-        type='password'
-        />
-      <View style ={styles.buttonsContainer}>
-          <CustomButton title = "My App Button" onPressButton={handleOnPressPrimaryButton} />
-          <CustomButton title = "My App Button #2" onPressButton={handleOnPressSecondaryButton} variant='secondary'/>
-          <CustomButton title = "My App Button #3" onPressButton={handleOnPressTertiaryButton} variant='tertiary' disabled />
-      </View>
+      <Text>Mi aplicación de Programación Móvil</Text>
+      <Text>Próximamente: Stack Navigator</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 50,
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
   },
-  buttonsContainer:{
-    padding: 15,
-  }
 });

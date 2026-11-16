@@ -2,7 +2,7 @@ export type CustomButtonVariant = "primary" | "secondary" | "tertiary";
 
 export type CustomButtonProps = {
     //tipo de dato: cadena
-    title: string;  
+    title: string;
     //tipo de dato: funcion vacia o metodo
     onPressButton: () => void;
     //tipo de dato: union de literales

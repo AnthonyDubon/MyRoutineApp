@@ -34,7 +34,7 @@ export default function CustomInput({
   //funciones
     const getError = () => {
         if (type === "email" && !value.includes("@") && value != "") return "Correo invalido";
-        if (type === "password" && value.length < 4) return "La contrase├▒a es debil"
+        if (type === "password" && value.length < 4) return "La contraseña es debil"
     }
 
 
