@@ -4,19 +4,19 @@ import CustomInput from "../components/CustomInput";
 import CustomButton from "../components/CustomButton";
 
 
-export default function Login (){
+export default function Login ({navigation} : any){
         //hooks de react: useState, useEffect, useMemo, etc. 
         const [email, setEmail] = useState("");
         const [password, setPassword] = useState("");
 
-        const handleOnPressPrimaryButton = () => {
-            console.log("Imprimiendo desde boton 1");
+        const handleOnPressLogIn = () => {
+            navigation.navigate("HomeScreen", {email});
         }
 
-        const handleOnPressSecondaryButton = () => {
-            console.log("Imprimiendo desde boton 2");
+        const handleOnPressSignUp = () => {
+            navigation.navigate("RegisterScreen")
         }
-        const handleOnPressTertiaryButton = () => {
+        const handleOnPressForgotPwd = () => {
             console.log("Imprimiendo desde boton 3");
         }
     return(
@@ -26,7 +26,7 @@ export default function Login (){
       <CustomInput  
         onChangeText={setEmail}
         value={email}
-        placeholder='Correo'
+        placeholder='email'
         type='email'
         />
       <CustomInput  
@@ -36,9 +36,9 @@ export default function Login (){
         type='password'
         />
       <View style ={styles.buttonsContainer}>
-          <CustomButton title = "My App Button" onPressButton={handleOnPressPrimaryButton} />
-          <CustomButton title = "My App Button #2" onPressButton={handleOnPressSecondaryButton} variant='secondary'/>
-          <CustomButton title = "My App Button #3" onPressButton={handleOnPressTertiaryButton} variant='tertiary' disabled />
+          <CustomButton title = "Log In" onPressButton={handleOnPressLogIn} />
+          <CustomButton title = "Sign Up" onPressButton={handleOnPressSignUp} variant='secondary'/>
+          <CustomButton title = "Forgot your password?" onPressButton={handleOnPressForgotPwd} variant='tertiary' disabled />
       </View>
     </View>
     );

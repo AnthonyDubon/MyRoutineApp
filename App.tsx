@@ -1,18 +1,14 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import {  View } from 'react-native';
+import StackNavigator from './src/navigation/StackNavigator';
 
 export default function App() {
+  
   return (
-    <View style={styles.container}>
-      <Text>Mi aplicación de Programación Móvil</Text>
-      <Text>Próximamente: Stack Navigator</Text>
-    </View>
+    <NavigationContainer>
+        <StackNavigator />
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
+
